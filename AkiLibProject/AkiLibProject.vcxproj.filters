@@ -1,17 +1,197 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="ソース ファイル">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="リソース ファイル">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="External">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="External\DirectXTK">
+      <UniqueIdentifier>{f79769ff-3281-4d11-9956-b4f7463adeff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\FBX">
+      <UniqueIdentifier>{0f3da016-b27f-4b7b-824f-80fe2f5300b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="External\XNAMath">
+      <UniqueIdentifier>{00c51d17-12dd-4afb-b46f-371343c1f4b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AkiLib">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="AkiLib\Headers">
+      <UniqueIdentifier>{ae66e923-9a29-4569-99cf-9407acbda8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AkiLib\Source">
+      <UniqueIdentifier>{7817094f-b29d-4208-b885-1a679b397703}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\Extuernal\DirectXTK\CommonStates.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\DDSTextureLoader.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\Effects.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\GeometricPrimitive.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\Model.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\PrimitiveBatch.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\ScreenGrab.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\SimpleMath.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\SpriteBatch.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\SpriteFont.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\VertexTypes.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\DirectXTK\WICTextureLoader.h">
+      <Filter>External\DirectXTK</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\FBX\fbxsdk.h">
+      <Filter>External\FBX</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\Extuernal\XNAMath\xnamath.h">
+      <Filter>External\XNAMath</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib.h">
+      <Filter>AkiLib</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\ApplicationWindow.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Board.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\ConstantBuffer.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\D3D11Manager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\FBXManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\FontManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\FPSManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\InputManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Matrix.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Model.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\MQOFile.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\PhysXManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\SamplerState.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Shader.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\SoundManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Texture.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Utility.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\AkiLib\Vector.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\Extuernal\DirectXTK\SimpleMath.inl">
+      <Filter>External\DirectXTK</Filter>
+    </None>
+    <None Include="Include\Extuernal\XNAMath\xnamathconvert.inl">
+      <Filter>External\XNAMath</Filter>
+    </None>
+    <None Include="Include\Extuernal\XNAMath\xnamathmatrix.inl">
+      <Filter>External\XNAMath</Filter>
+    </None>
+    <None Include="Include\Extuernal\XNAMath\xnamathmisc.inl">
+      <Filter>External\XNAMath</Filter>
+    </None>
+    <None Include="Include\Extuernal\XNAMath\xnamathvector.inl">
+      <Filter>External\XNAMath</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\AkiLib.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\ApplicationWindow.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Board.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\D3D11Manager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\FBXManager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\FontManager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\FPSManager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\InputManager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Matrix.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Model.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\MQOFile.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Shader.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\SoundManager.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Texture.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\Vector.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

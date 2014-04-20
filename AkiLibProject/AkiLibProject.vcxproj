@@ -10,19 +10,81 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include\AkiLib.h" />
+    <ClInclude Include="Include\AkiLib\ApplicationWindow.h" />
+    <ClInclude Include="Include\AkiLib\Board.h" />
+    <ClInclude Include="Include\AkiLib\ConstantBuffer.h" />
+    <ClInclude Include="Include\AkiLib\D3D11Manager.h" />
+    <ClInclude Include="Include\AkiLib\FBXManager.h" />
+    <ClInclude Include="Include\AkiLib\FontManager.h" />
+    <ClInclude Include="Include\AkiLib\FPSManager.h" />
+    <ClInclude Include="Include\AkiLib\InputManager.h" />
+    <ClInclude Include="Include\AkiLib\Matrix.h" />
+    <ClInclude Include="Include\AkiLib\Model.h" />
+    <ClInclude Include="Include\AkiLib\MQOFile.h" />
+    <ClInclude Include="Include\AkiLib\PhysXManager.h" />
+    <ClInclude Include="Include\AkiLib\SamplerState.h" />
+    <ClInclude Include="Include\AkiLib\Shader.h" />
+    <ClInclude Include="Include\AkiLib\SoundManager.h" />
+    <ClInclude Include="Include\AkiLib\Texture.h" />
+    <ClInclude Include="Include\AkiLib\Utility.h" />
+    <ClInclude Include="Include\AkiLib\Vector.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\CommonStates.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\DDSTextureLoader.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\Effects.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\GeometricPrimitive.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\Model.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\PrimitiveBatch.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\ScreenGrab.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\SimpleMath.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\SpriteBatch.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\SpriteFont.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\VertexTypes.h" />
+    <ClInclude Include="Include\Extuernal\DirectXTK\WICTextureLoader.h" />
+    <ClInclude Include="Include\Extuernal\FBX\fbxsdk.h" />
+    <ClInclude Include="Include\Extuernal\XNAMath\xnamath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Include\Extuernal\DirectXTK\SimpleMath.inl" />
+    <None Include="Include\Extuernal\XNAMath\xnamathconvert.inl" />
+    <None Include="Include\Extuernal\XNAMath\xnamathmatrix.inl" />
+    <None Include="Include\Extuernal\XNAMath\xnamathmisc.inl" />
+    <None Include="Include\Extuernal\XNAMath\xnamathvector.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cpp\AkiLib.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="cpp\ApplicationWindow.cpp" />
+    <ClCompile Include="cpp\Board.cpp" />
+    <ClCompile Include="cpp\D3D11Manager.cpp" />
+    <ClCompile Include="cpp\FBXManager.cpp" />
+    <ClCompile Include="cpp\FontManager.cpp" />
+    <ClCompile Include="cpp\FPSManager.cpp" />
+    <ClCompile Include="cpp\InputManager.cpp" />
+    <ClCompile Include="cpp\Matrix.cpp" />
+    <ClCompile Include="cpp\Model.cpp" />
+    <ClCompile Include="cpp\MQOFile.cpp" />
+    <ClCompile Include="cpp\Shader.cpp" />
+    <ClCompile Include="cpp\SoundManager.cpp" />
+    <ClCompile Include="cpp\Texture.cpp" />
+    <ClCompile Include="cpp\Vector.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{1FF6AA50-63B2-4D6A-A175-0367D93E4CDD}</ProjectGuid>
     <RootNamespace>AkiLibProject</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -33,21 +95,30 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PropertySheet\Akilib.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PropertySheet\Akilib.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)Include;$(ProjectDir)Include\Extuernal;$(ProjectDir)Include\Extuernal\FBX</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AkiLib.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>Akilib.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -56,15 +127,20 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(ProjectDir)Include;$(ProjectDir)Include\Extuernal;$(ProjectDir)Include\Extuernal\FBX</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>AkiLib.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>Akilib.h</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <Lib>
+      <AdditionalDependencies>winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
