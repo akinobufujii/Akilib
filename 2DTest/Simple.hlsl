@@ -27,18 +27,6 @@ struct VSOUT
 	float2	UV		: TEXCOORD0;
 };
 
-struct HSCONSTANT
-{
-	float Outside[4]	: SV_TessFactor;       // 外側のテッセレーション係数
-	float Inside[2]		: SV_InsideTessFactor; // 内側のテッセレーション係数
-};
-
-struct HSOUT
-{
-	float4	Pos		: SV_POSITION;
-	float2	UV		: TEXCOORD0;
-};
-
 //==============================================================================
 // 頂点シェーダ
 //==============================================================================
