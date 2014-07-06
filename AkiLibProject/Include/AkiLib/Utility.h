@@ -87,6 +87,17 @@ namespace AkiLib
 		return &static_cast<TYPE>( value );
 	}
 
+	/// @brief	カラーマクロ(上位ビットからRGBAで整列)
+	/// @param[in]	r	赤成分(0～255)
+	/// @param[in]	g	緑成分(0～255)
+	/// @param[in]	b	青成分(0～255)
+	/// @param[in]	a	α成分(0～255)
+	/// @return	整数値に合成した32ビット数値を返す
+	inline unsigned int ColorRGBA(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
+	{
+		return (r << 24) | (g << 16) | (b << 8) | a;
+	}
+
 	//==============================================================================
 	// クラス
 	//==============================================================================

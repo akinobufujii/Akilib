@@ -25,7 +25,7 @@ struct CBUFFER
 {
 	AKIALIGN16	AkiLib::Matrix	mWVP;
 	AKIALIGN16	AkiLib::Matrix	mWorld;
-	AKIALIGN16	XMFLOAT3		LightDir;
+	AKIALIGN16	AkiLib::Vector3	LightDir;
 };
 
 AkiLib::ConstantBuffer<CBUFFER> g_ConstantBuffer;
