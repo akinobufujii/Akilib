@@ -17,13 +17,15 @@ AkiLib::CFPSManager	g_FPS(60);			// FPS制御
 AkiLib::CBoard		g_Board;			// 板ポリ
 AkiLib::CShader		g_TestShader;		// シェーダ
 ID3D11InputLayout*	g_lpInputLayout;	// 入力レイアウト
-AkiLib::CTexture		g_Texture;			// テクスチャ
-AkiLib::CSamplerState	g_Sampler;			// サンプラステート
 
 
 XMFLOAT2	g_PolygonPos(0, 0);			// ポリゴン動かすための座標
 float		g_PolygonScale = 150;		// ポリゴンの大きさ
 float		g_PolygonRotate = 0;		// ポリゴンの回転
+AkiLib::CTexture		g_Texture;			// テクスチャ
+AkiLib::CSamplerState	g_Sampler;			// サンプラステート
+
+AkiLib::SpriteInfo g_SpriteInfo;	// 2Dスプライト情報
 
 // コンスタントバッファは16バイト境界でアラインメント
 struct CBUFFER
@@ -88,6 +90,11 @@ void Update()
 
 	// ポリゴンカラー変更
 	g_Board.SetColor(AkiLib::ColorRGBA(0xff, 0xff, 0xff, 0xff));
+
+	// スプライト
+	g_SpriteInfo.scale		= 200;
+	g_SpriteInfo.lpSampler	= &g_Sampler;
+	g_SpriteInfo.lpTexture	= &g_Texture;
 }
 
 void Draw()
@@ -134,6 +141,11 @@ void Draw()
 
 	// 板描画
 	g_Board.Draw(AKID3D11CONTEXT);
+
+	// スプライト描画
+	AKISPRITEMGR->Draw(g_SpriteInfo);
+
+	AKISPRITEMGR->Flush();
 
 	// 画面反映
 	AKID3D11MGR->Flip();
@@ -190,6 +202,9 @@ int APIENTRY _tWinMain( HINSTANCE hinst, HINSTANCE hprev, LPTSTR lpcmd, int nsho
 	// FBX初期化
 	AKIFBXMGR->Init();
 
+	// スプライトマネージャー初期化
+	AKISPRITEMGR->Init();
+
 	// テクスチャ作成
 	g_Texture.CreateTextureFromFile(AKID3D11DEVICE, AKID3D11CONTEXT, "lena.png");
 
@@ -220,6 +235,9 @@ int APIENTRY _tWinMain( HINSTANCE hinst, HINSTANCE hprev, LPTSTR lpcmd, int nsho
 	// その他解放
 	g_ConstantBuffer.Release();
 	AkiLib::SafeRelease(g_lpInputLayout);
+
+	// スプライトマネージャー解放
+	AKISPRITEMGR->Release();
 
 	// FBX解放
 	AKIFBXMGR->Release();

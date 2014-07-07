@@ -27,6 +27,7 @@
     <ClInclude Include="Include\AkiLib\SamplerState.h" />
     <ClInclude Include="Include\AkiLib\Shader.h" />
     <ClInclude Include="Include\AkiLib\SoundManager.h" />
+    <ClInclude Include="Include\AkiLib\SpriteManager.h" />
     <ClInclude Include="Include\AkiLib\Texture.h" />
     <ClInclude Include="Include\AkiLib\Utility.h" />
     <ClInclude Include="Include\AkiLib\Vector.h" />
@@ -69,6 +70,7 @@
     <ClCompile Include="cpp\MQOFile.cpp" />
     <ClCompile Include="cpp\Shader.cpp" />
     <ClCompile Include="cpp\SoundManager.cpp" />
+    <ClCompile Include="cpp\SpriteManager.cpp" />
     <ClCompile Include="cpp\Texture.cpp" />
     <ClCompile Include="cpp\Vector.cpp" />
   </ItemGroup>

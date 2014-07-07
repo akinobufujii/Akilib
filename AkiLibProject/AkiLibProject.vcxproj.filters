@@ -129,6 +129,9 @@
     <ClInclude Include="Include\AkiLib\Vector.h">
       <Filter>AkiLib\Headers</Filter>
     </ClInclude>
+    <ClInclude Include="Include\AkiLib\SpriteManager.h">
+      <Filter>AkiLib\Headers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Include\Extuernal\DirectXTK\SimpleMath.inl">
@@ -191,6 +194,9 @@
       <Filter>AkiLib\Source</Filter>
     </ClCompile>
     <ClCompile Include="cpp\Vector.cpp">
+      <Filter>AkiLib\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp\SpriteManager.cpp">
       <Filter>AkiLib\Source</Filter>
     </ClCompile>
   </ItemGroup>

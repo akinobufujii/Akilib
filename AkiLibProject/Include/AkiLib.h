@@ -17,6 +17,7 @@
 #include <vector>
 #include <fstream>
 #include <ctime>
+#include <queue>
 
 #include <windows.h>
 #include <d3d11_1.h>
@@ -68,5 +69,6 @@
 #include "AkiLib/SamplerState.h"
 #include "AkiLib/FBXManager.h"
 #include "AkiLib/FontManager.h"
+#include "AkiLib/SpriteManager.h"
 
 #endif // !__AKILIB_H__
