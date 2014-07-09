@@ -92,9 +92,9 @@ void Update()
 	g_Board.SetColor(AkiLib::ColorRGBA(0xff, 0xff, 0xff, 0xff));
 
 	// スプライト
-	g_SpriteInfo.scale		= 200;
-	g_SpriteInfo.lpSampler	= &g_Sampler;
-	g_SpriteInfo.lpTexture	= &g_Texture;
+	g_SpriteInfo.SetTextureAndDrawSize(&g_Texture, &g_Sampler);
+	//g_SpriteInfo.drawTexXY.x = 256.f;
+	//g_SpriteInfo.drawWH.x *= 0.5f;
 }
 
 void Draw()

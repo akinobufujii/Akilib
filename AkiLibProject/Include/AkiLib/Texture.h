@@ -89,6 +89,13 @@ namespace AkiLib
 			return &m_lpTextureView;
 		}
 
+		/// @brief	シェーダーリソースビューを獲得
+		/// @return シェーダーリソースビューを返す
+		inline const D3D11_TEXTURE2D_DESC& GetTexture2DDesc() const
+		{
+			return m_Texture2DDesc;
+		}
+
 	private:
 		//==============================================================================
 		// フィールド
@@ -98,6 +105,7 @@ namespace AkiLib
 		ID3D11Texture2D*			m_lpTextuer;			///< テクスチャ
 		ID3D11ShaderResourceView*	m_lpTextureView;		///< シェーダーリソースビュー
 		ID3D11RenderTargetView*		m_lpRenderTargetView;	///< レンダ－ターゲットビュー
+		D3D11_TEXTURE2D_DESC		m_Texture2DDesc;		///< テクスチャ情報
 	};
 }
 

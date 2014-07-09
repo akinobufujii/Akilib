@@ -11,22 +11,58 @@ namespace AkiLib
 	//==============================================================================
 	/// @brief	スプライトの情報(この情報を元に描画を行う)
 	//==============================================================================
-	struct SpriteInfo
+	class SpriteInfo
 	{
-		XMFLOAT2				pos;		//! ポリゴン動かすための座標
-		float					scale;		//! ポリゴンの大きさ
-		float					rotate;		//! ポリゴンの回転
-		AkiLib::CTexture*		lpTexture;	//! テクスチャ
-		AkiLib::CSamplerState*	lpSampler;	//! サンプラステート
-		
+	public:
+		//==============================================================================
+		// メソッド
+		//==============================================================================
+		/// @brief	コンストラクタ
 		SpriteInfo()
 			:pos(0, 0)
+			,WH(100, 100)
 			,scale(1)
 			,rotate(0)
+			,color(1, 1, 1, 1)
+			,drawTexXY(0, 0)
+			,drawTexWH(0, 0)
 			,lpTexture(nullptr)
 			,lpSampler(nullptr)
 		{
 		}
+
+		/// @brief	テクスチャと描画矩形を設定する
+		/// @param[in]	lptex		テクスチャ
+		/// @param[in]	lpsampler	サンプラ
+		inline void SetTextureAndDrawSize(AkiLib::CTexture* lptex, AkiLib::CSamplerState* lpsampler)
+		{
+			lpTexture = lptex;
+			lpSampler = lpsampler;
+
+			if(lpTexture)
+			{
+				// 描画幅高さはテクスチャtろ同じサイズにする
+				WH.x = lpTexture->GetTexture2DDesc().Width;
+				WH.y = lpTexture->GetTexture2DDesc().Height;
+
+				// 画像の矩形も設定する
+				drawTexXY = XMFLOAT2(0, 0);
+				drawTexWH = XMFLOAT2(lpTexture->GetTexture2DDesc().Width, lpTexture->GetTexture2DDesc().Height);
+			}
+		}
+
+		//==============================================================================
+		// フィールド
+		//==============================================================================
+		XMFLOAT2				pos;		//! ポリゴン動かすための座標
+		XMFLOAT2				WH;			//! 描画する幅高さ
+		float					scale;		//! ポリゴンの大きさ
+		float					rotate;		//! ポリゴンの回転
+		XMFLOAT4				color;		//! カラー
+		XMFLOAT2				drawTexXY;	//! 描画する画像の位置
+		XMFLOAT2				drawTexWH;	//! 描画する画像の幅高さ
+		AkiLib::CTexture*		lpTexture;	//! テクスチャ
+		AkiLib::CSamplerState*	lpSampler;	//! サンプラステート
 	};
 
 	//==============================================================================
@@ -48,6 +84,8 @@ namespace AkiLib
 		/// @brief	解放
 		void Release();
 
+		/// @brief	描画(実際にはキューに積むだけ)
+		/// @param[in]	info 描画情報
 		void Draw(const SpriteInfo& info);
 
 		/// @brief	コンストラクタすべて描画

@@ -80,6 +80,9 @@ bool CTexture::CreateTextureFromFile(
 		hr = DirectX::CreateWICTextureFromFile(lpdevice, lpcontext, filename, &m_lpTextureResource, &m_lpTextureView);
 	}
 
+	m_lpTextuer = static_cast<ID3D11Texture2D*>(m_lpTextureResource);
+	m_lpTextuer->GetDesc(&m_Texture2DDesc);
+
 	return (FAILED(hr))? false : true;
 }
 
@@ -144,6 +147,8 @@ bool CTexture::CreateRenderTarget(
 	{
 		ErrorMessageBox( "シェーダーリソースビュー作成失敗" );
 	}
+
+	m_lpTextuer->GetDesc(&m_Texture2DDesc);
 
 	return true;
 }

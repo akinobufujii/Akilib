@@ -78,13 +78,17 @@ void CSpriteManager::Flush()
 		
 		// 行列設定
 		// 好きなように拡大と移動をさせる
-		mScale.SetWorldScaling(info.scale);
+		///mScale.SetWorldScaling(info.scale);
+		mScale.SetWorldScaling(info.WH.x * info.scale, info.WH.y * info.scale, 1);
 		mTrans.SetWorldTrans(XMFLOAT3(info.pos.x, info.pos.y, 0));
 		mRotate.SetWorldRotateZ(info.rotate);
 
 		// 値を渡す
 		m_ConstantBuffer.mWVP = XMMatrixTranspose( (mRotate * mBaseTrans * mScale * mTrans * mProj) );
 		AKID3D11MGR->SendValueToShader(0, m_ConstantBuffer);
+
+		// カラー設定
+		m_Board.SetColor(info.color);
 
 		// 入力レイアウト設定
 		AKID3D11CONTEXT->IASetInputLayout( m_lpInputLayout );
@@ -94,6 +98,13 @@ void CSpriteManager::Flush()
 
 		if(info.lpSampler && info.lpTexture)
 		{
+			// 描画矩形(UV)設定
+			XMFLOAT2 tempWH(info.lpTexture->GetTexture2DDesc().Width, info.lpTexture->GetTexture2DDesc().Height);
+			m_Board.m_Vertex[0].UV = XMFLOAT2(info.drawTexXY.x / tempWH.x, info.drawTexXY.y / tempWH.y);
+			m_Board.m_Vertex[1].UV = XMFLOAT2(info.drawTexWH.x / tempWH.x, info.drawTexXY.y / tempWH.y);
+			m_Board.m_Vertex[2].UV = XMFLOAT2(info.drawTexXY.x / tempWH.x, info.drawTexWH.y / tempWH.y);
+			m_Board.m_Vertex[3].UV = XMFLOAT2(info.drawTexWH.x / tempWH.x, info.drawTexWH.y / tempWH.y);
+
 			// シェーダーリソース設定
 			info.lpTexture->SetTexture(AKID3D11CONTEXT, 0);
 
