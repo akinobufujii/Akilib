@@ -9,6 +9,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AkiLibTest", "AkiLibTest\Ak
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FBXTest", "FBXTest\FBXTest.vcxproj", "{07C53906-EEFB-433E-9446-786612F77FF2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1FF6AA50-63B2-4D6A-A175-0367D93E4CDD} = {1FF6AA50-63B2-4D6A-A175-0367D93E4CDD}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "2DTest", "2DTest\2DTest.vcxproj", "{764B120F-7152-4B6A-B814-DCE449C0395E}"
 	ProjectSection(ProjectDependencies) = postProject
