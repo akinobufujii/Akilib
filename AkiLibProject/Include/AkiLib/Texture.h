@@ -100,7 +100,7 @@ namespace AkiLib
 		//==============================================================================
 		// フィールド
 		//==============================================================================
-		ID3D11Resource*				m_lpTextureResource;	///< シェーダリソース
+		ID3D11Resource*				m_lpTextureResource;	///< テクスチャリソース
 		ID3D11SamplerState*			m_lpSamplerState;		///< サンプラステート
 		ID3D11Texture2D*			m_lpTextuer;			///< テクスチャ
 		ID3D11ShaderResourceView*	m_lpTextureView;		///< シェーダーリソースビュー

@@ -23,10 +23,12 @@ CTexture::CTexture():
 CTexture::~CTexture()
 {
 	SafeRelease( m_lpRenderTargetView );
-	SafeRelease( m_lpTextuer );
+	SafeRelease( m_lpTextureResource );
 	SafeRelease( m_lpSamplerState );
 	SafeRelease( m_lpTextureView );
-	SafeRelease( m_lpTextureResource );
+	
+	// m_lpTextureResource == m_lpTextuer なのでnullクリアだけする
+	m_lpTextuer = nullptr;
 }
 
 // テクスチャ作成(char)
